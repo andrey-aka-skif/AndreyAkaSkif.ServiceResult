@@ -1,4 +1,4 @@
-﻿namespace Result.Implementations;
+﻿namespace AndreyAkaSkif.ServiceResult.Implementations;
 
 public sealed class CreatedResult<T> : Result<T>
 {

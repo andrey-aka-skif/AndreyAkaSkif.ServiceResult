@@ -1,4 +1,4 @@
-﻿namespace Result.Abstractions;
+﻿namespace AndreyAkaSkif.ServiceResult.Abstractions;
 
 public abstract class Result<T>
 {

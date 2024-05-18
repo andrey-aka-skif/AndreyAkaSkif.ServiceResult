@@ -1,1 +1,1 @@
-﻿global using Result.Abstractions;
+﻿global using AndreyAkaSkif.ServiceResult.Abstractions;
