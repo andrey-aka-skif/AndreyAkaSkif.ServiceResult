@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<RepositoryUrl>https://github.com/andrey-aka-skif/AndreyAkaSkif.Result</RepositoryUrl>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Authors>andrey-aka-skif</Authors>
+	</PropertyGroup>
+
+</Project>
