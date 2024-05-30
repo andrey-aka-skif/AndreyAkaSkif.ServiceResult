@@ -1,5 +1,12 @@
 ﻿namespace AndreyAkaSkif.ServiceResult.Implementations;
 
+/// <summary>
+/// Выполнено
+/// </summary>
+/// <typeparam name="T">Тип возвращаемого объекта</typeparam>
+/// <remarks>
+/// По назначению соответствует HTTP status code 200
+/// </remarks>
 public sealed class SuccessResult<T> : Result<T>
 {
     public SuccessResult(T data)

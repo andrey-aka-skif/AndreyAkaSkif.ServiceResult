@@ -1,5 +1,9 @@
 ﻿namespace AndreyAkaSkif.ServiceResult.Abstractions;
 
+/// <summary>
+/// Базовый класс результата
+/// </summary>
+/// <typeparam name="T">Тип возвращаемого объекта</typeparam>
 public abstract class Result<T>
 {
     public virtual bool IsOk { get; } = false;
