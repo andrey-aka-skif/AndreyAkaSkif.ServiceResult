@@ -1,0 +1,25 @@
+### YamlMime:TableOfContent
+items:
+- uid: AndreyAkaSkif.ServiceResult.Abstractions
+  name: AndreyAkaSkif.ServiceResult.Abstractions
+  items:
+  - uid: AndreyAkaSkif.ServiceResult.Abstractions.Result`1
+    name: Result<T>
+- uid: AndreyAkaSkif.ServiceResult.Implementations
+  name: AndreyAkaSkif.ServiceResult.Implementations
+  items:
+  - uid: AndreyAkaSkif.ServiceResult.Implementations.ConflictResult`1
+    name: ConflictResult<T>
+  - uid: AndreyAkaSkif.ServiceResult.Implementations.CreatedResult`1
+    name: CreatedResult<T>
+  - uid: AndreyAkaSkif.ServiceResult.Implementations.InvalidResult`1
+    name: InvalidResult<T>
+  - uid: AndreyAkaSkif.ServiceResult.Implementations.NoContentResult`1
+    name: NoContentResult<T>
+  - uid: AndreyAkaSkif.ServiceResult.Implementations.NotFoundResult`1
+    name: NotFoundResult<T>
+  - uid: AndreyAkaSkif.ServiceResult.Implementations.SuccessResult`1
+    name: SuccessResult<T>
+  - uid: AndreyAkaSkif.ServiceResult.Implementations.UpdatedResult`1
+    name: UpdatedResult<T>
+memberLayout: SamePage
