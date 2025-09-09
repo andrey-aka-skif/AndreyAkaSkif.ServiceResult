@@ -1,0 +1,198 @@
+### YamlMime:ManagedReference
+items:
+- uid: AndreyAkaSkif.ServiceResult.Implementations
+  commentId: N:AndreyAkaSkif.ServiceResult.Implementations
+  id: AndreyAkaSkif.ServiceResult.Implementations
+  children:
+  - AndreyAkaSkif.ServiceResult.Implementations.ConflictResult`1
+  - AndreyAkaSkif.ServiceResult.Implementations.CreatedResult`1
+  - AndreyAkaSkif.ServiceResult.Implementations.InvalidResult`1
+  - AndreyAkaSkif.ServiceResult.Implementations.NoContentResult`1
+  - AndreyAkaSkif.ServiceResult.Implementations.NotFoundResult`1
+  - AndreyAkaSkif.ServiceResult.Implementations.SuccessResult`1
+  - AndreyAkaSkif.ServiceResult.Implementations.UpdatedResult`1
+  langs:
+  - csharp
+  - vb
+  name: AndreyAkaSkif.ServiceResult.Implementations
+  nameWithType: AndreyAkaSkif.ServiceResult.Implementations
+  fullName: AndreyAkaSkif.ServiceResult.Implementations
+  type: Namespace
+  assemblies:
+  - AndreyAkaSkif.ServiceResult
+references:
+- uid: AndreyAkaSkif.ServiceResult.Implementations.ConflictResult`1
+  commentId: T:AndreyAkaSkif.ServiceResult.Implementations.ConflictResult`1
+  href: AndreyAkaSkif.ServiceResult.Implementations.ConflictResult-1.html
+  name: ConflictResult<T>
+  nameWithType: ConflictResult<T>
+  fullName: AndreyAkaSkif.ServiceResult.Implementations.ConflictResult<T>
+  nameWithType.vb: ConflictResult(Of T)
+  fullName.vb: AndreyAkaSkif.ServiceResult.Implementations.ConflictResult(Of T)
+  name.vb: ConflictResult(Of T)
+  spec.csharp:
+  - uid: AndreyAkaSkif.ServiceResult.Implementations.ConflictResult`1
+    name: ConflictResult
+    href: AndreyAkaSkif.ServiceResult.Implementations.ConflictResult-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: AndreyAkaSkif.ServiceResult.Implementations.ConflictResult`1
+    name: ConflictResult
+    href: AndreyAkaSkif.ServiceResult.Implementations.ConflictResult-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: AndreyAkaSkif.ServiceResult.Implementations.CreatedResult`1
+  commentId: T:AndreyAkaSkif.ServiceResult.Implementations.CreatedResult`1
+  href: AndreyAkaSkif.ServiceResult.Implementations.CreatedResult-1.html
+  name: CreatedResult<T>
+  nameWithType: CreatedResult<T>
+  fullName: AndreyAkaSkif.ServiceResult.Implementations.CreatedResult<T>
+  nameWithType.vb: CreatedResult(Of T)
+  fullName.vb: AndreyAkaSkif.ServiceResult.Implementations.CreatedResult(Of T)
+  name.vb: CreatedResult(Of T)
+  spec.csharp:
+  - uid: AndreyAkaSkif.ServiceResult.Implementations.CreatedResult`1
+    name: CreatedResult
+    href: AndreyAkaSkif.ServiceResult.Implementations.CreatedResult-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: AndreyAkaSkif.ServiceResult.Implementations.CreatedResult`1
+    name: CreatedResult
+    href: AndreyAkaSkif.ServiceResult.Implementations.CreatedResult-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: AndreyAkaSkif.ServiceResult.Implementations.InvalidResult`1
+  commentId: T:AndreyAkaSkif.ServiceResult.Implementations.InvalidResult`1
+  href: AndreyAkaSkif.ServiceResult.Implementations.InvalidResult-1.html
+  name: InvalidResult<T>
+  nameWithType: InvalidResult<T>
+  fullName: AndreyAkaSkif.ServiceResult.Implementations.InvalidResult<T>
+  nameWithType.vb: InvalidResult(Of T)
+  fullName.vb: AndreyAkaSkif.ServiceResult.Implementations.InvalidResult(Of T)
+  name.vb: InvalidResult(Of T)
+  spec.csharp:
+  - uid: AndreyAkaSkif.ServiceResult.Implementations.InvalidResult`1
+    name: InvalidResult
+    href: AndreyAkaSkif.ServiceResult.Implementations.InvalidResult-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: AndreyAkaSkif.ServiceResult.Implementations.InvalidResult`1
+    name: InvalidResult
+    href: AndreyAkaSkif.ServiceResult.Implementations.InvalidResult-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: AndreyAkaSkif.ServiceResult.Implementations.NoContentResult`1
+  commentId: T:AndreyAkaSkif.ServiceResult.Implementations.NoContentResult`1
+  href: AndreyAkaSkif.ServiceResult.Implementations.NoContentResult-1.html
+  name: NoContentResult<T>
+  nameWithType: NoContentResult<T>
+  fullName: AndreyAkaSkif.ServiceResult.Implementations.NoContentResult<T>
+  nameWithType.vb: NoContentResult(Of T)
+  fullName.vb: AndreyAkaSkif.ServiceResult.Implementations.NoContentResult(Of T)
+  name.vb: NoContentResult(Of T)
+  spec.csharp:
+  - uid: AndreyAkaSkif.ServiceResult.Implementations.NoContentResult`1
+    name: NoContentResult
+    href: AndreyAkaSkif.ServiceResult.Implementations.NoContentResult-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: AndreyAkaSkif.ServiceResult.Implementations.NoContentResult`1
+    name: NoContentResult
+    href: AndreyAkaSkif.ServiceResult.Implementations.NoContentResult-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: AndreyAkaSkif.ServiceResult.Implementations.NotFoundResult`1
+  commentId: T:AndreyAkaSkif.ServiceResult.Implementations.NotFoundResult`1
+  href: AndreyAkaSkif.ServiceResult.Implementations.NotFoundResult-1.html
+  name: NotFoundResult<T>
+  nameWithType: NotFoundResult<T>
+  fullName: AndreyAkaSkif.ServiceResult.Implementations.NotFoundResult<T>
+  nameWithType.vb: NotFoundResult(Of T)
+  fullName.vb: AndreyAkaSkif.ServiceResult.Implementations.NotFoundResult(Of T)
+  name.vb: NotFoundResult(Of T)
+  spec.csharp:
+  - uid: AndreyAkaSkif.ServiceResult.Implementations.NotFoundResult`1
+    name: NotFoundResult
+    href: AndreyAkaSkif.ServiceResult.Implementations.NotFoundResult-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: AndreyAkaSkif.ServiceResult.Implementations.NotFoundResult`1
+    name: NotFoundResult
+    href: AndreyAkaSkif.ServiceResult.Implementations.NotFoundResult-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: AndreyAkaSkif.ServiceResult.Implementations.SuccessResult`1
+  commentId: T:AndreyAkaSkif.ServiceResult.Implementations.SuccessResult`1
+  href: AndreyAkaSkif.ServiceResult.Implementations.SuccessResult-1.html
+  name: SuccessResult<T>
+  nameWithType: SuccessResult<T>
+  fullName: AndreyAkaSkif.ServiceResult.Implementations.SuccessResult<T>
+  nameWithType.vb: SuccessResult(Of T)
+  fullName.vb: AndreyAkaSkif.ServiceResult.Implementations.SuccessResult(Of T)
+  name.vb: SuccessResult(Of T)
+  spec.csharp:
+  - uid: AndreyAkaSkif.ServiceResult.Implementations.SuccessResult`1
+    name: SuccessResult
+    href: AndreyAkaSkif.ServiceResult.Implementations.SuccessResult-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: AndreyAkaSkif.ServiceResult.Implementations.SuccessResult`1
+    name: SuccessResult
+    href: AndreyAkaSkif.ServiceResult.Implementations.SuccessResult-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: AndreyAkaSkif.ServiceResult.Implementations.UpdatedResult`1
+  commentId: T:AndreyAkaSkif.ServiceResult.Implementations.UpdatedResult`1
+  href: AndreyAkaSkif.ServiceResult.Implementations.UpdatedResult-1.html
+  name: UpdatedResult<T>
+  nameWithType: UpdatedResult<T>
+  fullName: AndreyAkaSkif.ServiceResult.Implementations.UpdatedResult<T>
+  nameWithType.vb: UpdatedResult(Of T)
+  fullName.vb: AndreyAkaSkif.ServiceResult.Implementations.UpdatedResult(Of T)
+  name.vb: UpdatedResult(Of T)
+  spec.csharp:
+  - uid: AndreyAkaSkif.ServiceResult.Implementations.UpdatedResult`1
+    name: UpdatedResult
+    href: AndreyAkaSkif.ServiceResult.Implementations.UpdatedResult-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: AndreyAkaSkif.ServiceResult.Implementations.UpdatedResult`1
+    name: UpdatedResult
+    href: AndreyAkaSkif.ServiceResult.Implementations.UpdatedResult-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
