@@ -81,3 +81,82 @@ public static class ResultFactory<T>
         return new UpdatedResult<T>(data);
     }
 }
+
+
+/// <summary>
+/// Фабрика результатов
+/// </summary>
+public static class ResultFactory
+{
+    /// <summary>
+    /// Создать результат "выполнено"
+    /// </summary>
+    /// <returns>Результат "выполнено"</returns>
+    public static SuccessResult CreateSuccessResult()
+    {
+        return new SuccessResult();
+    }
+
+    /// <summary>
+    /// Создать результат "не удалось выполнить"
+    /// </summary>
+    /// <param name="error"></param>
+    /// <returns>Результат "не удалось выполнить"</returns>
+    public static InvalidResult CreateInvalidResult(string? error = null)
+    {
+        if (error is null)
+            return new InvalidResult();
+        return new InvalidResult(error);
+    }
+
+    /// <summary>
+    /// Создать результат "конфликт при создании ресурса"
+    /// </summary>
+    /// <param name="error">Ошибка</param>
+    /// <returns>Результат "конфликт при создании ресурса"</returns>
+    public static ConflictResult CreateConflictResult(string? error = null)
+    {
+        if (error is null)
+            return new ConflictResult();
+        return new ConflictResult(error);
+    }
+
+    /// <summary>
+    /// Создать результат "ресурс создан"
+    /// </summary>
+    /// <returns>Результат "ресурс создан"</returns>
+    public static CreatedResult CreateCreatedResult()
+    {
+        return new CreatedResult();
+    }
+
+    /// <summary>
+    /// Создать результат "ресурс удален"
+    /// </summary>
+    /// <returns>Результат "ресурс удален"</returns>
+    public static NoContentResult CreateNoContentResult()
+    {
+        return new NoContentResult();
+    }
+
+    /// <summary>
+    /// Создать результат "ресурс не найден"
+    /// </summary>
+    /// <param name="error">Ошибка</param>
+    /// <returns>Результат "ресурс не найден"</returns>
+    public static NotFoundResult CreateNotFoundResult(string? error = null)
+    {
+        if (error is null)
+            return new NotFoundResult();
+        return new NotFoundResult(error);
+    }
+
+    /// <summary>
+    /// Создать результат "ресурс обновлен"
+    /// </summary>
+    /// <returns>Результат "ресурс обновлен"</returns>
+    public static UpdatedResult CreateUpdatedResult()
+    {
+        return new UpdatedResult();
+    }
+}

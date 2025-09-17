@@ -18,3 +18,21 @@ public class InvalidResult<T> : Result<T>
             Error = DEFAULT_ERROR_MESSAGE;
     }
 }
+
+/// <summary>
+/// Не удалось выполнить
+/// </summary>
+public class InvalidResult : Result
+{
+    private const string DEFAULT_ERROR_MESSAGE = "Не удалось выполнить операцию";
+
+    public InvalidResult() : this(DEFAULT_ERROR_MESSAGE) { }
+
+    public InvalidResult(string error)
+    {
+        if (!string.IsNullOrWhiteSpace(error))
+            Error = error;
+        else
+            Error = DEFAULT_ERROR_MESSAGE;
+    }
+}
