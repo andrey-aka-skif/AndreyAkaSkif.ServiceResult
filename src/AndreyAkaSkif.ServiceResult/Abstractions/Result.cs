@@ -3,12 +3,11 @@
 /// <summary>
 /// Базовый класс результата
 /// </summary>
-/// <typeparam name="T">Тип возвращаемого объекта</typeparam>
+/// <typeparam name="T">Тип возвращаемого ресурса</typeparam>
 public abstract class Result<T>
 {
-    public virtual bool IsOk { get; } = false;
+    public bool IsOk { get; protected set; } = false;
     public bool IsFailure => !IsOk;
-    public virtual string Error { get; } = string.Empty;
-    public virtual T? Data { get; } = default;
+    public string? Error { get; protected set; } = default;
+    public T? Data { get; protected set; } = default;
 }
-
