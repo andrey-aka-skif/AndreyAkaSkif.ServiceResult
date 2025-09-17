@@ -11,3 +11,15 @@ public sealed class CreatedResult<T> : SuccessResult<T>
 {
     public CreatedResult(T data) : base(data) { }
 }
+
+
+/// <summary>
+/// Ресурс создан
+/// </summary>
+/// <remarks>
+/// По назначению соответствует HTTP status code 201
+/// </remarks>
+public sealed class CreatedResult : SuccessResult
+{
+    public CreatedResult() : base() { }
+}

@@ -20,3 +20,17 @@ public class SuccessResult<T> : Result<T>
         IsOk = true;
     }
 }
+
+/// <summary>
+/// Выполнено
+/// </summary>
+/// <remarks>
+/// По назначению соответствует HTTP status code 200
+/// </remarks>
+public class SuccessResult : Result
+{
+    public SuccessResult()
+    {
+        IsOk = true;
+    }
+}
