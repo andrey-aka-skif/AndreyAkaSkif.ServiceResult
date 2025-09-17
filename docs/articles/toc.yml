@@ -4,5 +4,3 @@
 - name: NuGet-пакеты
   items:
   - href: Nuget/create-package.md
-  - href: Nuget/publish-package.md
-  - href: Nuget/links.md
