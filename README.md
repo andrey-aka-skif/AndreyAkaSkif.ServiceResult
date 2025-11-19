@@ -25,3 +25,4 @@ dotnet add package AndreyAkaSkif.ServiceResult
 ```shell
 docfx docs/docfx.json --serve
 ```
+[![Build, Test and Deploy](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/ci-cd.yml)
