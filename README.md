@@ -1,4 +1,7 @@
 # ServiceResult
+
+[![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/blob/main/LICENSE)
+
 Пакет реализует концепцию Result-паттерна
 
 Идея функционального подхода при возврате значений как объекта Result взята из статьи Владимира Хорикова [Functional C#: Handling failures, input errors](https://enterprisecraftsmanship.com/posts/functional-c-handling-failures-input-errors/). Идея создать отдельный проект взята из его учебного проекта на [github](https://github.com/vkhorikov/CSharpFunctionalExtensions).
