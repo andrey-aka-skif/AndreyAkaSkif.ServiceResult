@@ -43,12 +43,29 @@
 ## Версия пакета
 
 Версия **не хранится** в исходнике (в `.csproj` нет `<Version>`). Она задаётся из
-релизного тега `v*.*.*` в CI при упаковке: `dotnet pack -p:Version=<версия>`.
+тега релиза `v*.*.*` в CI при упаковке: `dotnet pack -p:Version=<версия>`.
 
 ## CI/CD (GitHub Actions)
 
-Рекомендуемый способ публикации — через workflow GitHub Actions (см. файл
-[ci-cd.yml](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/blob/main/.github/workflows/ci-cd.yml)).
+Логика разделена на три workflow:
+
+- **[ci.yml](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/blob/main/.github/workflows/ci.yml)** —
+  сборка и тесты на пуш в любую ветку (валидация). Статус виден в PR.
+- **[docs.yml](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/blob/main/.github/workflows/docs.yml)** —
+  сборка DocFX и деплой на GitHub Pages на пуш в `main` (и по ручному запуску).
+- **[release.yml](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/blob/main/.github/workflows/release.yml)** —
+  публикация пакетов в GitHub Packages.
+
+### Как выпустить релиз
+
+1. Влить изменения в `main` (обновив `CHANGELOG.md`).
+2. Создать **GitHub Release** с тегом `vX.Y.Z` (через UI или `gh release create vX.Y.Z`).
+   Событие `release: published` запускает `release.yml`, который собирает и публикует
+   пакеты с версией из тега.
+
+Голый `git push` тега публикацию **не** запускает — это осознанно (релиз оформляется
+как GitHub Release с release notes). Для повторной публикации по существующему тегу
+есть ручной запуск `release.yml` через `workflow_dispatch` (вход `tag`).
 
 ## Документация (DocFX)
 
