@@ -14,9 +14,11 @@
   </Folder>
   <Folder Name="/src/">
     <Project Path="src/AndreyAkaSkif.ServiceResult/AndreyAkaSkif.ServiceResult.csproj" />
+    <Project Path="src/AndreyAkaSkif.ServiceResult.AspNetCore/AndreyAkaSkif.ServiceResult.AspNetCore.csproj" />
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/AndreyAkaSkif.ServiceResult.Tests/AndreyAkaSkif.ServiceResult.Tests.csproj" />
+    <Project Path="tests/AndreyAkaSkif.ServiceResult.AspNetCore.Tests/AndreyAkaSkif.ServiceResult.AspNetCore.Tests.csproj" />
   </Folder>
   <Folder Name="/docs/">
     <File Path="docs/docfx.json" />
