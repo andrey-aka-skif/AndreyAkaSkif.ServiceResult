@@ -15,7 +15,9 @@
   <Folder Name="/src/">
     <Project Path="src/AndreyAkaSkif.ServiceResult/AndreyAkaSkif.ServiceResult.csproj" />
   </Folder>
-  <Folder Name="/tests/" />
+  <Folder Name="/tests/">
+    <Project Path="tests/AndreyAkaSkif.ServiceResult.Tests/AndreyAkaSkif.ServiceResult.Tests.csproj" />
+  </Folder>
   <Folder Name="/docs/">
     <File Path="docs/docfx.json" />
     <File Path="docs/index.md" />
