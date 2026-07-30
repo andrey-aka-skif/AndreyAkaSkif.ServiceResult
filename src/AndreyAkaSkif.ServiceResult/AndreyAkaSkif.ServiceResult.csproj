@@ -14,4 +14,19 @@
 		<Authors>andrey-aka-skif</Authors>
 	</PropertyGroup>
 
+	<PropertyGroup>
+		<Title>Result-паттерн для сервисного слоя .NET</Title>
+		<Product>AndreyAkaSkif ServiceResult</Product>
+		<Description>Реализация Result-паттерна для сервисного слоя .NET: типизированный результат операции (успех/ошибка) без исключений, плюс набор конкретных CRUD-результатов (Success, Created, Updated, NoContent, Invalid, NotFound, Conflict) как точка маппинга в HTTP.</Description>
+		<PackageTags>result;result-pattern;service-result;service-layer;dotnet;csharp</PackageTags>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://andrey-aka-skif.github.io/AndreyAkaSkif.ServiceResult/</PackageProjectUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryType>git</RepositoryType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\..\README.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
 </Project>
