@@ -29,4 +29,6 @@ dotnet add package AndreyAkaSkif.ServiceResult
 dotnet tool restore
 dotnet docfx docs/docfx.json --serve
 ```
-[![Build, Test and Deploy](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/ci-cd.yml)
+[![CI](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/ci.yml/badge.svg)](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/ci.yml)
+[![Docs](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/docs.yml/badge.svg)](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/docs.yml)
+[![Release](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/release.yml/badge.svg)](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/release.yml)
