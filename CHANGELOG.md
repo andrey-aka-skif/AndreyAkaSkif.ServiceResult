@@ -14,6 +14,7 @@
 ### Добавлено
 
 - метаданные NuGet-пакета: описание, теги, лицензия, README (видны в списке пакетов Visual Studio и на nuget.org)
+- пакет `AndreyAkaSkif.ServiceResult.AspNetCore`: маппинг результата в HTTP-ответы — `ToActionResult()` (MVC) и `ToIResult()` (minimal API), для типизированных и нетипизированных результатов; `InvalidResult` → 400
 
 ## [2.1.4] - 2024-09-17
 

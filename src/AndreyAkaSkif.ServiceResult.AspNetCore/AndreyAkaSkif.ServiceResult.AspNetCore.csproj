@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<RepositoryUrl>https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult</RepositoryUrl>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Authors>andrey-aka-skif</Authors>
+		<Title>ASP.NET Core-расширения для ServiceResult</Title>
+		<Product>AndreyAkaSkif ServiceResult</Product>
+		<Description>ASP.NET Core-расширения для AndreyAkaSkif.ServiceResult: маппинг результата сервиса в HTTP-ответы — ToActionResult() для MVC-контроллеров и ToIResult() для minimal API.</Description>
+		<PackageTags>result;result-pattern;aspnetcore;mvc;minimal-api;http;dotnet</PackageTags>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://andrey-aka-skif.github.io/AndreyAkaSkif.ServiceResult/</PackageProjectUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryType>git</RepositoryType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\AndreyAkaSkif.ServiceResult\AndreyAkaSkif.ServiceResult.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\..\README.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+</Project>
