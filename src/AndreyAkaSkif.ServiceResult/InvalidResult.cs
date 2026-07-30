@@ -1,4 +1,4 @@
-﻿namespace AndreyAkaSkif.ServiceResult;
+namespace AndreyAkaSkif.ServiceResult;
 
 /// <summary>
 /// Не удалось выполнить
