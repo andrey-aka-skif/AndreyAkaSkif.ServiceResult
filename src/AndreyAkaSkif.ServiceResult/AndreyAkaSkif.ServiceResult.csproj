@@ -1,10 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<TargetFramework>net7.0</TargetFramework>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>enable</Nullable>
-	</PropertyGroup>
+	<!-- TargetFramework, Nullable, ImplicitUsings, LangVersion и анализаторы —
+	     централизованно в Directory.Build.props -->
 
 	<PropertyGroup>
 		<RepositoryUrl>https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult</RepositoryUrl>
