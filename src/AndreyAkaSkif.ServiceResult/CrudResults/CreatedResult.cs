@@ -1,4 +1,4 @@
-﻿namespace AndreyAkaSkif.ServiceResult.CrudResults;
+namespace AndreyAkaSkif.ServiceResult.CrudResults;
 
 /// <summary>
 /// Ресурс создан
@@ -7,10 +7,7 @@
 /// <remarks>
 /// По назначению соответствует HTTP status code 201
 /// </remarks>
-public sealed class CreatedResult<T> : SuccessResult<T>
-{
-    public CreatedResult(T data) : base(data) { }
-}
+public sealed class CreatedResult<T>(T data) : SuccessResult<T>(data);
 
 
 /// <summary>
@@ -19,7 +16,4 @@ public sealed class CreatedResult<T> : SuccessResult<T>
 /// <remarks>
 /// По назначению соответствует HTTP status code 201
 /// </remarks>
-public sealed class CreatedResult : SuccessResult
-{
-    public CreatedResult() : base() { }
-}
+public sealed class CreatedResult : SuccessResult;

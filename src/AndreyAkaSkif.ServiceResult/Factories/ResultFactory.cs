@@ -1,162 +1,71 @@
-﻿namespace AndreyAkaSkif.ServiceResult.Factories;
-
-/// <summary>
-/// Фабрика результатов
-/// </summary>
-/// <typeparam name="T">Тип возвращаемого ресурса</typeparam>
-public static class ResultFactory<T>
-{
-    /// <summary>
-    /// Создать результат "выполнено"
-    /// </summary>
-    /// <param name="data">Тип возвращаемого ресурса</param>
-    /// <returns>Результат "выполнено"</returns>
-    public static SuccessResult<T> CreateSuccessResult(T data)
-    {
-        return new SuccessResult<T>(data);
-    }
-
-    /// <summary>
-    /// Создать результат "не удалось выполнить"
-    /// </summary>
-    /// <param name="error"></param>
-    /// <returns>Результат "не удалось выполнить"</returns>
-    public static InvalidResult<T> CreateInvalidResult(string? error = null)
-    {
-        if (error is null)
-            return new InvalidResult<T>();
-        return new InvalidResult<T>(error);
-    }
-
-    /// <summary>
-    /// Создать результат "конфликт при создании ресурса"
-    /// </summary>
-    /// <param name="error">Ошибка</param>
-    /// <returns>Результат "конфликт при создании ресурса"</returns>
-    public static ConflictResult<T> CreateConflictResult(string? error = null)
-    {
-        if (error is null)
-            return new ConflictResult<T>();
-        return new ConflictResult<T>(error);
-    }
-
-    /// <summary>
-    /// Создать результат "ресурс создан"
-    /// </summary>
-    /// <param name="data">Тип возвращаемого ресурса</param>
-    /// <returns>Результат "ресурс создан"</returns>
-    public static CreatedResult<T> CreateCreatedResult(T data)
-    {
-        return new CreatedResult<T>(data);
-    }
-
-    /// <summary>
-    /// Создать результат "ресурс удален"
-    /// </summary>
-    /// <returns>Результат "ресурс удален"</returns>
-    public static NoContentResult<T> CreateNoContentResult()
-    {
-        return new NoContentResult<T>();
-    }
-
-    /// <summary>
-    /// Создать результат "ресурс не найден"
-    /// </summary>
-    /// <param name="error">Ошибка</param>
-    /// <returns>Результат "ресурс не найден"</returns>
-    public static NotFoundResult<T> CreateNotFoundResult(string? error = null)
-    {
-        if (error is null)
-            return new NotFoundResult<T>();
-        return new NotFoundResult<T>(error);
-    }
-
-    /// <summary>
-    /// Создать результат "ресурс обновлен"
-    /// </summary>
-    /// <param name="data">Тип возвращаемого ресурса</param>
-    /// <returns>Результат "ресурс обновлен"</returns>
-    public static UpdatedResult<T> CreateUpdatedResult(T data)
-    {
-        return new UpdatedResult<T>(data);
-    }
-}
-
+namespace AndreyAkaSkif.ServiceResult.Factories;
 
 /// <summary>
 /// Фабрика результатов
 /// </summary>
 public static class ResultFactory
 {
-    /// <summary>
-    /// Создать результат "выполнено"
-    /// </summary>
-    /// <returns>Результат "выполнено"</returns>
-    public static SuccessResult CreateSuccessResult()
-    {
-        return new SuccessResult();
-    }
+    /// <summary>Результат "выполнено"</summary>
+    public static SuccessResult Success() => new();
 
-    /// <summary>
-    /// Создать результат "не удалось выполнить"
-    /// </summary>
-    /// <param name="error"></param>
-    /// <returns>Результат "не удалось выполнить"</returns>
-    public static InvalidResult CreateInvalidResult(string? error = null)
-    {
-        if (error is null)
-            return new InvalidResult();
-        return new InvalidResult(error);
-    }
+    /// <summary>Результат "выполнено" с ресурсом</summary>
+    /// <typeparam name="T">Тип возвращаемого ресурса</typeparam>
+    /// <param name="data">Возвращаемый ресурс</param>
+    public static SuccessResult<T> Success<T>(T data) => new(data);
 
-    /// <summary>
-    /// Создать результат "конфликт при создании ресурса"
-    /// </summary>
-    /// <param name="error">Ошибка</param>
-    /// <returns>Результат "конфликт при создании ресурса"</returns>
-    public static ConflictResult CreateConflictResult(string? error = null)
-    {
-        if (error is null)
-            return new ConflictResult();
-        return new ConflictResult(error);
-    }
+    /// <summary>Результат "не удалось выполнить"</summary>
+    /// <param name="error">Сообщение об ошибке; при <see langword="null"/> — по умолчанию</param>
+    public static InvalidResult Invalid(string? error = null)
+        => error is null ? new() : new(error);
 
-    /// <summary>
-    /// Создать результат "ресурс создан"
-    /// </summary>
-    /// <returns>Результат "ресурс создан"</returns>
-    public static CreatedResult CreateCreatedResult()
-    {
-        return new CreatedResult();
-    }
+    /// <summary>Результат "не удалось выполнить"</summary>
+    /// <typeparam name="T">Тип возвращаемого ресурса</typeparam>
+    /// <param name="error">Сообщение об ошибке; при <see langword="null"/> — по умолчанию</param>
+    public static InvalidResult<T> Invalid<T>(string? error = null)
+        => error is null ? new() : new(error);
 
-    /// <summary>
-    /// Создать результат "ресурс удален"
-    /// </summary>
-    /// <returns>Результат "ресурс удален"</returns>
-    public static NoContentResult CreateNoContentResult()
-    {
-        return new NoContentResult();
-    }
+    /// <summary>Результат "конфликт при создании ресурса"</summary>
+    /// <param name="error">Сообщение об ошибке; при <see langword="null"/> — по умолчанию</param>
+    public static ConflictResult Conflict(string? error = null)
+        => error is null ? new() : new(error);
 
-    /// <summary>
-    /// Создать результат "ресурс не найден"
-    /// </summary>
-    /// <param name="error">Ошибка</param>
-    /// <returns>Результат "ресурс не найден"</returns>
-    public static NotFoundResult CreateNotFoundResult(string? error = null)
-    {
-        if (error is null)
-            return new NotFoundResult();
-        return new NotFoundResult(error);
-    }
+    /// <summary>Результат "конфликт при создании ресурса"</summary>
+    /// <typeparam name="T">Тип возвращаемого ресурса</typeparam>
+    /// <param name="error">Сообщение об ошибке; при <see langword="null"/> — по умолчанию</param>
+    public static ConflictResult<T> Conflict<T>(string? error = null)
+        => error is null ? new() : new(error);
 
-    /// <summary>
-    /// Создать результат "ресурс обновлен"
-    /// </summary>
-    /// <returns>Результат "ресурс обновлен"</returns>
-    public static UpdatedResult CreateUpdatedResult()
-    {
-        return new UpdatedResult();
-    }
+    /// <summary>Результат "ресурс создан"</summary>
+    public static CreatedResult Created() => new();
+
+    /// <summary>Результат "ресурс создан"</summary>
+    /// <typeparam name="T">Тип возвращаемого ресурса</typeparam>
+    /// <param name="data">Созданный ресурс</param>
+    public static CreatedResult<T> Created<T>(T data) => new(data);
+
+    /// <summary>Результат "ресурс удалён"</summary>
+    public static NoContentResult NoContent() => new();
+
+    /// <summary>Результат "ресурс удалён"</summary>
+    /// <typeparam name="T">Тип возвращаемого ресурса</typeparam>
+    public static NoContentResult<T> NoContent<T>() => new();
+
+    /// <summary>Результат "ресурс не найден"</summary>
+    /// <param name="error">Сообщение об ошибке; при <see langword="null"/> — по умолчанию</param>
+    public static NotFoundResult NotFound(string? error = null)
+        => error is null ? new() : new(error);
+
+    /// <summary>Результат "ресурс не найден"</summary>
+    /// <typeparam name="T">Тип возвращаемого ресурса</typeparam>
+    /// <param name="error">Сообщение об ошибке; при <see langword="null"/> — по умолчанию</param>
+    public static NotFoundResult<T> NotFound<T>(string? error = null)
+        => error is null ? new() : new(error);
+
+    /// <summary>Результат "ресурс обновлён"</summary>
+    public static UpdatedResult Updated() => new();
+
+    /// <summary>Результат "ресурс обновлён"</summary>
+    /// <typeparam name="T">Тип возвращаемого ресурса</typeparam>
+    /// <param name="data">Обновлённый ресурс</param>
+    public static UpdatedResult<T> Updated<T>(T data) => new(data);
 }

@@ -1,4 +1,4 @@
-﻿namespace AndreyAkaSkif.ServiceResult.CrudResults;
+namespace AndreyAkaSkif.ServiceResult.CrudResults;
 
 /// <summary>
 /// Ресурс удален
@@ -7,12 +7,7 @@
 /// <remarks>
 /// По назначению соответствует HTTP status code 204
 /// </remarks>
-public sealed class NoContentResult<T> : SuccessResult<T>
-{
-    public NoContentResult() : base()
-    {
-    }
-}
+public sealed class NoContentResult<T> : SuccessResult<T>;
 
 /// <summary>
 /// Ресурс удален
@@ -20,9 +15,4 @@ public sealed class NoContentResult<T> : SuccessResult<T>
 /// <remarks>
 /// По назначению соответствует HTTP status code 204
 /// </remarks>
-public sealed class NoContentResult : SuccessResult
-{
-    public NoContentResult() : base()
-    {
-    }
-}
+public sealed class NoContentResult : SuccessResult;

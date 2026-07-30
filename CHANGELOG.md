@@ -9,6 +9,7 @@
 
 - **BREAKING CHANGE**: namespace `AndreyAkaSkif.ServiceResult.BusinessResults` переименован в `AndreyAkaSkif.ServiceResult.CrudResults`
 - **BREAKING CHANGE**: целевой фреймворк поднят до net10.0
+- **BREAKING CHANGE**: фабрика результатов сведена в единый необобщённый `ResultFactory` с обобщёнными методами; префикс `Create` убран (например, `ResultFactory<T>.CreateSuccessResult(data)` → `ResultFactory.Success(data)`, `ResultFactory.CreateNotFoundResult()` → `ResultFactory.NotFound()`)
 - версия пакета задаётся из релизного тега и больше не хранится в исходнике
 
 ### Добавлено

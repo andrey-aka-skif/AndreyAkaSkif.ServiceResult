@@ -6,9 +6,9 @@ public class ResultFactoryTests
     private const string DefaultNotFoundMessage = "Ресурс не найден";
 
     [Fact]
-    public void Generic_CreateSuccessResult_ReturnsSuccessWithData()
+    public void Generic_Success_ReturnsSuccessWithData()
     {
-        var result = ResultFactory<int>.CreateSuccessResult(7);
+        var result = ResultFactory.Success(7);
 
         Assert.IsType<SuccessResult<int>>(result);
         Assert.True(result.IsOk);
@@ -16,9 +16,9 @@ public class ResultFactoryTests
     }
 
     [Fact]
-    public void Generic_CreateInvalidResult_Null_UsesDefaultMessage()
+    public void Generic_Invalid_Null_UsesDefaultMessage()
     {
-        var result = ResultFactory<int>.CreateInvalidResult(null);
+        var result = ResultFactory.Invalid<int>(null);
 
         Assert.IsType<InvalidResult<int>>(result);
         Assert.True(result.IsFailure);
@@ -26,26 +26,26 @@ public class ResultFactoryTests
     }
 
     [Fact]
-    public void Generic_CreateInvalidResult_CustomError_IsPreserved()
+    public void Generic_Invalid_CustomError_IsPreserved()
     {
-        var result = ResultFactory<int>.CreateInvalidResult("bad");
+        var result = ResultFactory.Invalid<int>("bad");
 
         Assert.Equal("bad", result.Error);
     }
 
     [Fact]
-    public void NonGeneric_CreateSuccessResult_IsOk()
+    public void NonGeneric_Success_IsOk()
     {
-        var result = ResultFactory.CreateSuccessResult();
+        var result = ResultFactory.Success();
 
         Assert.IsType<SuccessResult>(result);
         Assert.True(result.IsOk);
     }
 
     [Fact]
-    public void NonGeneric_CreateNotFoundResult_Null_UsesDefaultMessage()
+    public void NonGeneric_NotFound_Null_UsesDefaultMessage()
     {
-        var result = ResultFactory.CreateNotFoundResult(null);
+        var result = ResultFactory.NotFound(null);
 
         Assert.IsType<NotFoundResult>(result);
         Assert.True(result.IsFailure);
