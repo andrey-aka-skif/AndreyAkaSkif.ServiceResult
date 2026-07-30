@@ -9,8 +9,9 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
+		<!-- Версия задаётся из релизного тега в CI (dotnet pack -p:Version=...);
+		     в исходнике не хранится -->
 		<Authors>andrey-aka-skif</Authors>
-		<Version>2.1.4</Version>
 	</PropertyGroup>
 
 </Project>

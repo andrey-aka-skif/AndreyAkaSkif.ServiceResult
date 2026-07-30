@@ -12,7 +12,7 @@ on:
 env:
   NUGET_PACKAGES: ${{ github.workspace }}/.nuget/packages
   PACKAGE_OUTPUT_DIR: ./nupkg
-  DOTNET_VERSION: '7.0.x'
+  DOTNET_VERSION: '10.0.x'
 
 jobs:
   versioning:
@@ -59,19 +59,14 @@ jobs:
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
-      - name: Update project version
-        run: |
-          # Автоматически обновляем версию в .csproj файле
-          dotnet build -p:Version=${{ needs.versioning.outputs.package_version }} --configuration Release
-
       - name: Restore dependencies
         run: dotnet restore
 
       - name: Build package
-        run: dotnet build --configuration Release --no-restore
-      
+        run: dotnet build --configuration Release --no-restore -p:Version=${{ needs.versioning.outputs.package_version }}
+
       - name: Pack NuGet
-        run: dotnet pack --configuration Release --no-build --output ${{ env.PACKAGE_OUTPUT_DIR }}
+        run: dotnet pack --configuration Release --no-build --output ${{ env.PACKAGE_OUTPUT_DIR }} -p:Version=${{ needs.versioning.outputs.package_version }}
       
       - name: Publish artifacts
         uses: actions/upload-artifact@v4
@@ -96,13 +91,13 @@ jobs:
       - name: Setup .NET for DocFX
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: ${{ env.DOTNET_VERSION }}
 
-      - name: Install DocFX
-        run: dotnet tool update -g docfx
+      - name: Restore .NET tools
+        run: dotnet tool restore
 
       - name: Build documentation
-        run: docfx docs/docfx.json
+        run: dotnet docfx docs/docfx.json
 
       - name: Upload docs artifacts
         uses: actions/upload-artifact@v4
