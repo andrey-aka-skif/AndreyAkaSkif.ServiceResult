@@ -40,7 +40,7 @@
       "_appName": "AndreyAkaSkif.ServiceResult",
       "_appTitle": "AndreyAkaSkif.ServiceResult",
       "_enableSearch": true,
-      "pdf": true
+      "pdf": false
     }
   }
 }

@@ -1,4 +1,5 @@
-- name: Статьи
+- name: Руководство
   href: articles/
+
 - name: API
   href: api/

@@ -9,7 +9,7 @@
 Реализация в значительной мере основана на статье [Clean Up Your Client to Business Logic Relationship With a Result Pattern (C#)](https://alexdunn.org/2019/02/25/clean-up-your-client-to-business-logic-relationship-with-a-result-pattern-c/)
 
 - [Документация проекта](https://andrey-aka-skif.github.io/AndreyAkaSkif.ServiceResult/)
-- [Создание пакетов](docs/articles/Nuget/create-package.md)
+- [Разработка](docs/articles/development.md)
 
 
 ## Установка пакета
