@@ -3,6 +3,19 @@
 Формат основан на [Keep a Changelog](https://keepachangelog.com/ru/1.1.0/).
 Этот проект придерживается [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.0.1] - 2026-07-31
+
+### Исправлено
+
+- CI/CD: некорректный триггер `create: tags` (событие `create` не поддерживает фильтр по тегам и срабатывало на создание любой ветки/тега) заменён на публикацию по событию `release: published`
+- убраны двойные/шумные прогоны workflow
+
+### Изменено
+
+- единый `ci-cd.yml` разделён на три workflow: `ci.yml` (сборка и тесты на пуш в ветку), `docs.yml` (DocFX → GitHub Pages на пуш в `main`), `release.yml` (публикация пакета в GitHub Packages при создании GitHub Release)
+- добавлен ручной перезапуск публикации по тегу через `workflow_dispatch`
+- GitHub Actions обновлены до актуальных мажоров на Node 24 (Node 20 объявлен deprecated); добавлен Dependabot для автообновления actions
+
 ## [3.0.0] - 2026-07-31
 
 ### Изменено

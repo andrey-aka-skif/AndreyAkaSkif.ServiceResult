@@ -1,0 +1,46 @@
+# CI: валидация на пуш в любую ветку (теги не триггерят — их обрабатывает release.yml).
+# pull_request намеренно не используется: пуш фиче-ветки уже даёт прогон, и его статус
+# виден в PR — так избегаем двойных прогонов. Публикация и деплой доки — в отдельных
+# workflow (release.yml, docs.yml).
+name: ci
+
+on:
+  push:
+    branches: ['**']
+  workflow_dispatch:
+
+env:
+  NUGET_PACKAGES: ${{ github.workspace }}/.nuget/packages
+  DOTNET_VERSION: '10.0.x'
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Cache NuGet packages
+        uses: actions/cache@v6
+        with:
+          path: ${{ env.NUGET_PACKAGES }}
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj', '**/Directory.Packages.props') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test --configuration Release --no-build
+
+      - name: Pack (validate packaging)
+        run: dotnet pack --configuration Release --no-build --output ./nupkg
