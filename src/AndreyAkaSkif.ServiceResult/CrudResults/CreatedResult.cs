@@ -1,4 +1,4 @@
-﻿namespace AndreyAkaSkif.ServiceResult.BusinessResults;
+﻿namespace AndreyAkaSkif.ServiceResult.CrudResults;
 
 /// <summary>
 /// Ресурс создан

@@ -5,6 +5,16 @@
 
 ## [Не выпущено]
 
+### Изменено
+
+- **BREAKING CHANGE**: namespace `AndreyAkaSkif.ServiceResult.BusinessResults` переименован в `AndreyAkaSkif.ServiceResult.CrudResults`
+- **BREAKING CHANGE**: целевой фреймворк поднят до net10.0
+- версия пакета задаётся из релизного тега и больше не хранится в исходнике
+
+### Добавлено
+
+- метаданные NuGet-пакета: описание, теги, лицензия, README (видны в списке пакетов Visual Studio и на nuget.org)
+
 ## [2.1.4] - 2024-09-17
 
 ### Добавлено

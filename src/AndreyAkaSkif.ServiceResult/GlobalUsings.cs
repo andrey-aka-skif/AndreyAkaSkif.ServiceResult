@@ -1,2 +1,2 @@
 ﻿global using AndreyAkaSkif.ServiceResult.Abstractions;
-global using AndreyAkaSkif.ServiceResult.BusinessResults;
+global using AndreyAkaSkif.ServiceResult.CrudResults;
