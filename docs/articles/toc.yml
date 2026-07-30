@@ -1,6 +1,5 @@
-- name: ServiceResult
-- href: introduction.md
+- name: Обзор
+  href: introduction.md
 
-- name: NuGet-пакеты
-  items:
-  - href: Nuget/create-package.md
+- name: Разработка
+  href: development.md
