@@ -9,7 +9,10 @@ on:
   workflow_dispatch:
 
 env:
-  DOTNET_VERSION: '10.0.x'
+  # Проекты мультитаргетные — ставим оба рантайма
+  DOTNET_VERSION: |
+    9.0.x
+    10.0.x
 
 # Разрешаем один активный деплой Pages за раз; новые пуши в main не отменяют текущий.
 concurrency:
