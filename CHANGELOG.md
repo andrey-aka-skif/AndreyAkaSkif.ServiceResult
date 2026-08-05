@@ -3,6 +3,13 @@
 Формат основан на [Keep a Changelog](https://keepachangelog.com/ru/1.1.0/).
 Этот проект придерживается [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Добавлено
+
+- логотип в заголовке README
+- иконка пакетов: `logo.png` пакуется в корень пакета (`PackageIcon`), для http-фидов дополнительно задан `PackageIconUrl` — Visual Studio показывает встроенную иконку только для folder-based источников
+
 ## [3.0.2] - 2026-07-31
 
 ### Изменено
