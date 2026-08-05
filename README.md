@@ -1,6 +1,9 @@
 # ServiceResult
 
+[![CI](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/ci.yml/badge.svg)](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/ci.yml)
+[![Release](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/release.yml/badge.svg)](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/release.yml)
 [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/blob/main/LICENSE)
+[![Docs](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/docs.yml/badge.svg)](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/docs.yml)
 
 Пакет реализует концепцию Result-паттерна: операция возвращает типизированный объект результата (успех/ошибка) вместо выброса исключений.
 
@@ -29,6 +32,3 @@ dotnet add package AndreyAkaSkif.ServiceResult
 dotnet tool restore
 dotnet docfx docs/docfx.json --serve
 ```
-[![CI](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/ci.yml/badge.svg)](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/ci.yml)
-[![Docs](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/docs.yml/badge.svg)](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/docs.yml)
-[![Release](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/release.yml/badge.svg)](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/release.yml)
