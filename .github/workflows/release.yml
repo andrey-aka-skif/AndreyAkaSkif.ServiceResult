@@ -14,7 +14,10 @@ on:
         required: true
 
 env:
-  DOTNET_VERSION: '10.0.x'
+  # SDK 10 умеет собирать net9.0, но dotnet test требует рантайм 9
+  DOTNET_VERSION: |
+    9.0.x
+    10.0.x
   PACKAGE_OUTPUT_DIR: ./nupkg
 
 jobs:
