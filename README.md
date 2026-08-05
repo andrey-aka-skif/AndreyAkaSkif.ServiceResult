@@ -1,4 +1,4 @@
-# ServiceResult
+# <img alt="logo" src="./logo/logo.png" width="32"/> ServiceResult
 
 [![CI](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/ci.yml/badge.svg)](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/ci.yml)
 [![Release](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/release.yml/badge.svg)](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/release.yml)
