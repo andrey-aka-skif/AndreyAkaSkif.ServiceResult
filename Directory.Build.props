@@ -13,4 +13,22 @@
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <!-- Иконка пакетов. PackageIconUrl помечен deprecated, но VS показывает
+         PackageIcon только для folder-based источников; для http-фидов иконка
+         берётся из iconUrl. NU5048 возникает только когда задан один лишь
+         PackageIconUrl, без PackageIcon -->
+    <PackageIcon>logo.png</PackageIcon>
+    <PackageIconUrl>https://raw.githubusercontent.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/main/logo/logo.png</PackageIconUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)logo\logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Visible>False</Visible>
+    </None>
+  </ItemGroup>
+
 </Project>
