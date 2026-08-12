@@ -1,7 +1,7 @@
 # <img alt="logo" src="./logo/logo.png" width="32"/> ServiceResult
 
 [![CI](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/ci.yml/badge.svg)](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/ci.yml)
-[![Release](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/release.yml/badge.svg)](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/release.yml)
+[![Publish](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/publish.yml/badge.svg)](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/publish.yml)
 [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/blob/main/LICENSE)
 [![Docs](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/docs.yml/badge.svg)](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/docs.yml)
 
@@ -12,7 +12,7 @@
 Реализация в значительной мере основана на статье [Clean Up Your Client to Business Logic Relationship With a Result Pattern (C#)](https://alexdunn.org/2019/02/25/clean-up-your-client-to-business-logic-relationship-with-a-result-pattern-c/)
 
 - [Документация проекта](https://andrey-aka-skif.github.io/AndreyAkaSkif.ServiceResult/)
-- [Разработка](docs/articles/development.md)
+- [Разработка](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/blob/main/CONTRIBUTING.md)
 
 
 ## Поддерживаемые фреймворки
