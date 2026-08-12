@@ -1,13 +1,20 @@
-# CI: валидация на пуш в любую ветку (теги не триггерят — их обрабатывает release.yml).
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+#
+# CI: валидация на пуш в любую ветку (теги не триггерят — их обрабатывает publish.yml).
 # pull_request намеренно не используется: пуш фиче-ветки уже даёт прогон, и его статус
-# виден в PR — так избегаем двойных прогонов. Публикация и деплой доки — в отдельных
-# workflow (release.yml, docs.yml).
-name: ci
+# виден в PR — так избегаем двойных прогонов.
+#
+# Сборка документации идёт здесь же как проверка: битые ссылки и невалидный toc.yml
+# роняют шаг до того, как правка попадёт в main, где её ждёт деплой Pages (docs.yml).
+# Шаги docfx стоят последними намеренно — приоритет у библиотеки: к моменту их
+# запуска сборка, тесты и упаковка уже отработали, и падение доки не отменяет их
+# результат.
+
+name: CI
 
 on:
   push:
     branches: ['**']
-  workflow_dispatch:
 
 env:
   NUGET_PACKAGES: ${{ github.workspace }}/.nuget/packages
@@ -17,8 +24,9 @@ env:
     10.0.x
 
 jobs:
-  build-test:
+  build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v7
@@ -47,3 +55,10 @@ jobs:
 
       - name: Pack (validate packaging)
         run: dotnet pack --configuration Release --no-build --output ./nupkg
+
+      - name: Restore .NET tools
+        run: dotnet tool restore
+
+      # Проверка, а не выкладка: сайт с main публикует docs.yml
+      - name: Build documentation
+        run: dotnet docfx docs/docfx.json
