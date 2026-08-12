@@ -1,8 +1,15 @@
+# yaml-language-server: $schema=https://json.schemastore.org/dependabot-2.0.json
+
 version: 2
 updates:
-  - package-ecosystem: github-actions
-    directory: /
+  # Зеркало в .gitea/workflows dependabot не видит — там версии экшенов
+  # поднимаются вручную вслед за этими.
+  - package-ecosystem: 'github-actions'
+    directory: '/'
     schedule:
-      interval: weekly
+      interval: 'weekly'
     commit-message:
-      prefix: ci
+      prefix: 'ci'
+    groups:
+      github-actions:
+        patterns: ['*']
