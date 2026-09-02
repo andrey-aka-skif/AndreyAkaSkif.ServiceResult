@@ -1,8 +1,8 @@
 # <img alt="logo" src="./logo/logo.png" width="32"/> ServiceResult
 
+[![License](https://img.shields.io/github/license/andrey-aka-skif/AndreyAkaSkif.ServiceResult.svg?label=License)](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/blob/main/LICENSE)
 [![CI](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/ci.yml/badge.svg)](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/ci.yml)
 [![Publish](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/publish.yml/badge.svg)](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/publish.yml)
-[![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/blob/main/LICENSE)
 [![Docs](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/docs.yml/badge.svg)](https://github.com/andrey-aka-skif/AndreyAkaSkif.ServiceResult/actions/workflows/docs.yml)
 
 Пакет реализует концепцию Result-паттерна: операция возвращает типизированный объект результата (успех/ошибка) вместо выброса исключений.
