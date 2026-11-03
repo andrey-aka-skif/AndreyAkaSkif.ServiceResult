@@ -24,12 +24,12 @@ public static class ResultFactory
     public static InvalidResult<T> Invalid<T>(string? error = null)
         => new(error);
 
-    /// <summary>Результат "конфликт при создании ресурса"</summary>
+    /// <summary>Результат "конфликт с текущим состоянием ресурса"</summary>
     /// <param name="error">Сообщение об ошибке; при <see langword="null"/>, пустой строке или пробелах — по умолчанию</param>
     public static ConflictResult Conflict(string? error = null)
         => new(error);
 
-    /// <summary>Результат "конфликт при создании ресурса"</summary>
+    /// <summary>Результат "конфликт с текущим состоянием ресурса"</summary>
     /// <typeparam name="T">Тип возвращаемого ресурса</typeparam>
     /// <param name="error">Сообщение об ошибке; при <see langword="null"/>, пустой строке или пробелах — по умолчанию</param>
     public static ConflictResult<T> Conflict<T>(string? error = null)
@@ -43,10 +43,10 @@ public static class ResultFactory
     /// <param name="data">Созданный ресурс</param>
     public static CreatedResult<T> Created<T>(T data) => new(data);
 
-    /// <summary>Результат "ресурс удалён"</summary>
+    /// <summary>Результат "нет содержимого"</summary>
     public static NoContentResult NoContent() => new();
 
-    /// <summary>Результат "ресурс удалён"</summary>
+    /// <summary>Результат "нет содержимого"</summary>
     /// <typeparam name="T">Тип возвращаемого ресурса</typeparam>
     public static NoContentResult<T> NoContent<T>() => new();
 

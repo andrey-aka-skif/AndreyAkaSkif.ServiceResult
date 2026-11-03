@@ -1,7 +1,7 @@
 ﻿namespace AndreyAkaSkif.ServiceResult.CrudResults;
 
 /// <summary>
-/// Конфликт при создании ресурса
+/// Конфликт с текущим состоянием ресурса
 /// </summary>
 /// <typeparam name="T">Тип возвращаемого ресурса</typeparam>
 /// <remarks>
@@ -18,7 +18,7 @@ public sealed class ConflictResult<T> : InvalidResult<T>
 }
 
 /// <summary>
-/// Конфликт при создании ресурса
+/// Конфликт с текущим состоянием ресурса
 /// </summary>
 /// <remarks>
 /// По назначению соответствует HTTP status code 409
