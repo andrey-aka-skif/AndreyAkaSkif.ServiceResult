@@ -4,6 +4,7 @@ public class ResultFactoryTests
 {
     private const string DefaultInvalidMessage = "Не удалось выполнить операцию";
     private const string DefaultNotFoundMessage = "Ресурс не найден";
+    private const string DefaultConflictMessage = "Ресурс уже существует";
 
     [Fact]
     public void Generic_Success_ReturnsSuccessWithData()
@@ -50,5 +51,45 @@ public class ResultFactoryTests
         Assert.IsType<NotFoundResult>(result);
         Assert.True(result.IsFailure);
         Assert.Equal(DefaultNotFoundMessage, result.Error);
+    }
+
+    [Theory]
+    [InlineData("")]
+    [InlineData("   ")]
+    public void Generic_NotFound_WhitespaceError_UsesNotFoundMessage(string error)
+    {
+        var result = ResultFactory.NotFound<int>(error);
+
+        Assert.Equal(DefaultNotFoundMessage, result.Error);
+    }
+
+    [Theory]
+    [InlineData("")]
+    [InlineData("   ")]
+    public void NonGeneric_NotFound_WhitespaceError_UsesNotFoundMessage(string error)
+    {
+        var result = ResultFactory.NotFound(error);
+
+        Assert.Equal(DefaultNotFoundMessage, result.Error);
+    }
+
+    [Theory]
+    [InlineData("")]
+    [InlineData("   ")]
+    public void Generic_Conflict_WhitespaceError_UsesConflictMessage(string error)
+    {
+        var result = ResultFactory.Conflict<int>(error);
+
+        Assert.Equal(DefaultConflictMessage, result.Error);
+    }
+
+    [Theory]
+    [InlineData("")]
+    [InlineData("   ")]
+    public void NonGeneric_Conflict_WhitespaceError_UsesConflictMessage(string error)
+    {
+        var result = ResultFactory.Conflict(error);
+
+        Assert.Equal(DefaultConflictMessage, result.Error);
     }
 }

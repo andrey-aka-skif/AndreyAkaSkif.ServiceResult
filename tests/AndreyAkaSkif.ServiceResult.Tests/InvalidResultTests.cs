@@ -64,4 +64,44 @@ public class InvalidResultTests
         Assert.True(result.IsFailure);
         Assert.Equal(DefaultNotFoundMessage, result.Error);
     }
+
+    [Theory]
+    [InlineData("")]
+    [InlineData("   ")]
+    public void NotFoundResult_WhitespaceError_FallsBackToNotFoundMessage(string error)
+    {
+        var result = new NotFoundResult<int>(error);
+
+        Assert.Equal(DefaultNotFoundMessage, result.Error);
+    }
+
+    [Theory]
+    [InlineData("")]
+    [InlineData("   ")]
+    public void NonGeneric_NotFoundResult_WhitespaceError_FallsBackToNotFoundMessage(string error)
+    {
+        var result = new NotFoundResult(error);
+
+        Assert.Equal(DefaultNotFoundMessage, result.Error);
+    }
+
+    [Theory]
+    [InlineData("")]
+    [InlineData("   ")]
+    public void ConflictResult_WhitespaceError_FallsBackToConflictMessage(string error)
+    {
+        var result = new ConflictResult<int>(error);
+
+        Assert.Equal(DefaultConflictMessage, result.Error);
+    }
+
+    [Theory]
+    [InlineData("")]
+    [InlineData("   ")]
+    public void NonGeneric_ConflictResult_WhitespaceError_FallsBackToConflictMessage(string error)
+    {
+        var result = new ConflictResult(error);
+
+        Assert.Equal(DefaultConflictMessage, result.Error);
+    }
 }
