@@ -49,7 +49,7 @@ public async Task<Result<Block>> GetByIdAsync(int id)
 
 // BlocksController.cs (MVC)
 
-public async Task<ActionResult<Block>> GetByIdAsync(int id)
+public async Task<ActionResult<Block>> GetById(int id)
 {
     var result = await _service.GetByIdAsync(id);
     return result.ToActionResult();
@@ -88,13 +88,15 @@ public async Task<Result<Block>> CreateAsync(BlockDto dto)
 ```csharp
 // BlocksController.cs (MVC)
 
-public async Task<ActionResult<Block>> CreateAsync(BlockDto dto)
+public async Task<ActionResult<Block>> Create(BlockDto dto)
 {
     var result = await _service.CreateAsync(dto);
     return result.ToActionResult(
-        new ResourceLocationInfo(nameof(GetByIdAsync), "Blocks", new { id = result.Data?.Id }));
+        new ResourceLocationInfo(nameof(GetById), "Blocks", new { id = result.Data?.Id }));
 }
 ```
+
+`ResourceLocationInfo` принимает имя экшена, а не имя метода, и `nameof` верен здесь потому, что у экшенов контроллера нет суффикса `Async`. При `MvcOptions.SuppressAsyncSuffixInActionNames`, включённой по умолчанию, MVC отбрасывает этот суффикс: у метода `GetByIdAsync` экшен называется `GetById`, маршрута по имени с суффиксом нет, адрес не собирается, и ответ падает с `InvalidOperationException`. Поэтому экшены удобнее называть сразу без суффикса — тогда `nameof` указывает на существующий маршрут и переживает переименование метода.
 
 В minimal API `Location` задаётся URI:
 
