@@ -12,7 +12,7 @@ public abstract class Result<T>
     public bool IsOk { get; protected set; }
 
     /// <summary>
-    /// Резельтат неуспешен
+    /// Результат неуспешен
     /// </summary>
     public bool IsFailure => !IsOk;
 
@@ -39,7 +39,7 @@ public abstract class Result
     public bool IsOk { get; protected set; }
 
     /// <summary>
-    /// Резельтат неуспешен
+    /// Результат неуспешен
     /// </summary>
     public bool IsFailure => !IsOk;
 

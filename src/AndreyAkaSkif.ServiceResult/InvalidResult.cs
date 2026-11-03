@@ -4,6 +4,9 @@ namespace AndreyAkaSkif.ServiceResult;
 /// Не удалось выполнить
 /// </summary>
 /// <typeparam name="T">Тип возвращаемого ресурса</typeparam>
+/// <remarks>
+/// По назначению соответствует HTTP status code 400
+/// </remarks>
 public class InvalidResult<T> : Result<T>
 {
     private const string DEFAULT_ERROR_MESSAGE = "Не удалось выполнить операцию";
@@ -22,6 +25,9 @@ public class InvalidResult<T> : Result<T>
 /// <summary>
 /// Не удалось выполнить
 /// </summary>
+/// <remarks>
+/// По назначению соответствует HTTP status code 400
+/// </remarks>
 public class InvalidResult : Result
 {
     private const string DEFAULT_ERROR_MESSAGE = "Не удалось выполнить операцию";

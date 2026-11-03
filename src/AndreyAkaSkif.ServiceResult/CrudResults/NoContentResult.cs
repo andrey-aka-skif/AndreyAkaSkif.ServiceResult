@@ -1,7 +1,7 @@
 namespace AndreyAkaSkif.ServiceResult.CrudResults;
 
 /// <summary>
-/// Ресурс удален
+/// Нет содержимого
 /// </summary>
 /// <typeparam name="T">Тип возвращаемого ресурса</typeparam>
 /// <remarks>
@@ -10,7 +10,7 @@ namespace AndreyAkaSkif.ServiceResult.CrudResults;
 public sealed class NoContentResult<T> : SuccessResult<T>;
 
 /// <summary>
-/// Ресурс удален
+/// Нет содержимого
 /// </summary>
 /// <remarks>
 /// По назначению соответствует HTTP status code 204
