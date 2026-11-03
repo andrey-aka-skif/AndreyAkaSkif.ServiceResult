@@ -13,7 +13,7 @@ public sealed class NotFoundResult<T> : InvalidResult<T>
 
     public NotFoundResult() : base(DEFAULT_ERROR_MESSAGE) { }
 
-    public NotFoundResult(string error)
+    public NotFoundResult(string? error)
         : base(string.IsNullOrWhiteSpace(error) ? DEFAULT_ERROR_MESSAGE : error) { }
 }
 
@@ -29,6 +29,6 @@ public sealed class NotFoundResult : InvalidResult
 
     public NotFoundResult() : base(DEFAULT_ERROR_MESSAGE) { }
 
-    public NotFoundResult(string error)
+    public NotFoundResult(string? error)
         : base(string.IsNullOrWhiteSpace(error) ? DEFAULT_ERROR_MESSAGE : error) { }
 }

@@ -10,7 +10,7 @@ public class InvalidResult<T> : Result<T>
 
     public InvalidResult() : this(DEFAULT_ERROR_MESSAGE) { }
 
-    public InvalidResult(string error)
+    public InvalidResult(string? error)
     {
         if (!string.IsNullOrWhiteSpace(error))
             Error = error;
@@ -28,7 +28,7 @@ public class InvalidResult : Result
 
     public InvalidResult() : this(DEFAULT_ERROR_MESSAGE) { }
 
-    public InvalidResult(string error)
+    public InvalidResult(string? error)
     {
         if (!string.IsNullOrWhiteSpace(error))
             Error = error;

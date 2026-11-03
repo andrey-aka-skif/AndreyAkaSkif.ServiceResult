@@ -66,9 +66,10 @@ public class InvalidResultTests
     }
 
     [Theory]
+    [InlineData(null)]
     [InlineData("")]
     [InlineData("   ")]
-    public void NotFoundResult_WhitespaceError_FallsBackToNotFoundMessage(string error)
+    public void NotFoundResult_NullOrWhitespaceError_FallsBackToNotFoundMessage(string? error)
     {
         var result = new NotFoundResult<int>(error);
 
@@ -76,9 +77,10 @@ public class InvalidResultTests
     }
 
     [Theory]
+    [InlineData(null)]
     [InlineData("")]
     [InlineData("   ")]
-    public void NonGeneric_NotFoundResult_WhitespaceError_FallsBackToNotFoundMessage(string error)
+    public void NonGeneric_NotFoundResult_NullOrWhitespaceError_FallsBackToNotFoundMessage(string? error)
     {
         var result = new NotFoundResult(error);
 
@@ -86,9 +88,10 @@ public class InvalidResultTests
     }
 
     [Theory]
+    [InlineData(null)]
     [InlineData("")]
     [InlineData("   ")]
-    public void ConflictResult_WhitespaceError_FallsBackToConflictMessage(string error)
+    public void ConflictResult_NullOrWhitespaceError_FallsBackToConflictMessage(string? error)
     {
         var result = new ConflictResult<int>(error);
 
@@ -96,12 +99,23 @@ public class InvalidResultTests
     }
 
     [Theory]
+    [InlineData(null)]
     [InlineData("")]
     [InlineData("   ")]
-    public void NonGeneric_ConflictResult_WhitespaceError_FallsBackToConflictMessage(string error)
+    public void NonGeneric_ConflictResult_NullOrWhitespaceError_FallsBackToConflictMessage(string? error)
     {
         var result = new ConflictResult(error);
 
         Assert.Equal(DefaultConflictMessage, result.Error);
+    }
+
+    [Fact]
+    public void NotFoundResult_TakesErrorOfAnotherResult_WithoutNullForgiving()
+    {
+        var other = new InvalidResult<int>("boom");
+
+        var result = new NotFoundResult<int>(other.Error);
+
+        Assert.Equal("boom", result.Error);
     }
 }

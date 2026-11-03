@@ -13,7 +13,7 @@ public sealed class ConflictResult<T> : InvalidResult<T>
 
     public ConflictResult() : base(DEFAULT_ERROR_MESSAGE) { }
 
-    public ConflictResult(string error)
+    public ConflictResult(string? error)
         : base(string.IsNullOrWhiteSpace(error) ? DEFAULT_ERROR_MESSAGE : error) { }
 }
 
@@ -29,6 +29,6 @@ public sealed class ConflictResult : InvalidResult
 
     public ConflictResult() : base(DEFAULT_ERROR_MESSAGE) { }
 
-    public ConflictResult(string error)
+    public ConflictResult(string? error)
         : base(string.IsNullOrWhiteSpace(error) ? DEFAULT_ERROR_MESSAGE : error) { }
 }
