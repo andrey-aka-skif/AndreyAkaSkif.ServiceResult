@@ -14,26 +14,26 @@ public static class ResultFactory
     public static SuccessResult<T> Success<T>(T data) => new(data);
 
     /// <summary>Результат "не удалось выполнить"</summary>
-    /// <param name="error">Сообщение об ошибке; при <see langword="null"/> — по умолчанию</param>
+    /// <param name="error">Сообщение об ошибке; при <see langword="null"/>, пустой строке или пробелах — по умолчанию</param>
     public static InvalidResult Invalid(string? error = null)
-        => error is null ? new() : new(error);
+        => new(error);
 
     /// <summary>Результат "не удалось выполнить"</summary>
     /// <typeparam name="T">Тип возвращаемого ресурса</typeparam>
-    /// <param name="error">Сообщение об ошибке; при <see langword="null"/> — по умолчанию</param>
+    /// <param name="error">Сообщение об ошибке; при <see langword="null"/>, пустой строке или пробелах — по умолчанию</param>
     public static InvalidResult<T> Invalid<T>(string? error = null)
-        => error is null ? new() : new(error);
+        => new(error);
 
     /// <summary>Результат "конфликт при создании ресурса"</summary>
-    /// <param name="error">Сообщение об ошибке; при <see langword="null"/> — по умолчанию</param>
+    /// <param name="error">Сообщение об ошибке; при <see langword="null"/>, пустой строке или пробелах — по умолчанию</param>
     public static ConflictResult Conflict(string? error = null)
-        => error is null ? new() : new(error);
+        => new(error);
 
     /// <summary>Результат "конфликт при создании ресурса"</summary>
     /// <typeparam name="T">Тип возвращаемого ресурса</typeparam>
-    /// <param name="error">Сообщение об ошибке; при <see langword="null"/> — по умолчанию</param>
+    /// <param name="error">Сообщение об ошибке; при <see langword="null"/>, пустой строке или пробелах — по умолчанию</param>
     public static ConflictResult<T> Conflict<T>(string? error = null)
-        => error is null ? new() : new(error);
+        => new(error);
 
     /// <summary>Результат "ресурс создан"</summary>
     public static CreatedResult Created() => new();
@@ -51,15 +51,15 @@ public static class ResultFactory
     public static NoContentResult<T> NoContent<T>() => new();
 
     /// <summary>Результат "ресурс не найден"</summary>
-    /// <param name="error">Сообщение об ошибке; при <see langword="null"/> — по умолчанию</param>
+    /// <param name="error">Сообщение об ошибке; при <see langword="null"/>, пустой строке или пробелах — по умолчанию</param>
     public static NotFoundResult NotFound(string? error = null)
-        => error is null ? new() : new(error);
+        => new(error);
 
     /// <summary>Результат "ресурс не найден"</summary>
     /// <typeparam name="T">Тип возвращаемого ресурса</typeparam>
-    /// <param name="error">Сообщение об ошибке; при <see langword="null"/> — по умолчанию</param>
+    /// <param name="error">Сообщение об ошибке; при <see langword="null"/>, пустой строке или пробелах — по умолчанию</param>
     public static NotFoundResult<T> NotFound<T>(string? error = null)
-        => error is null ? new() : new(error);
+        => new(error);
 
     /// <summary>Результат "ресурс обновлён"</summary>
     public static UpdatedResult Updated() => new();
