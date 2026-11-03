@@ -16,7 +16,7 @@ public static class ResultActionResultExtensions
     public static ActionResult ToActionResult<T>(this Result<T> result) => result switch
     {
         Crud.ConflictResult<T> => new ConflictObjectResult(new ErrorMessage(result.Error)),
-        Crud.CreatedResult<T> => new CreatedAtActionResult(null, null, null, result.Data),
+        Crud.CreatedResult<T> => new CreatedResult((string?)null, result.Data),
         Crud.NotFoundResult<T> => new NotFoundObjectResult(new ErrorMessage(result.Error)),
         Crud.NoContentResult<T> => new NoContentResult(),
         Crud.UpdatedResult<T> => new OkObjectResult(result.Data),
@@ -40,7 +40,7 @@ public static class ResultActionResultExtensions
     public static ActionResult ToActionResult(this Result result) => result switch
     {
         Crud.ConflictResult => new ConflictObjectResult(new ErrorMessage(result.Error)),
-        Crud.CreatedResult => new CreatedAtActionResult(null, null, null, null),
+        Crud.CreatedResult => new CreatedResult((string?)null, null),
         Crud.NotFoundResult => new NotFoundObjectResult(new ErrorMessage(result.Error)),
         Crud.NoContentResult => new NoContentResult(),
         Crud.UpdatedResult => new OkResult(),

@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Mvc.Abstractions;
+using Microsoft.AspNetCore.Routing;
 using Mvc = Microsoft.AspNetCore.Mvc;
 
 namespace AndreyAkaSkif.ServiceResult.AspNetCore.Tests;
@@ -19,10 +21,14 @@ public class ToActionResultTests
     {
         var result = new CreatedResult<int>(5).ToActionResult();
 
-        var created = Assert.IsType<Mvc.CreatedAtActionResult>(result);
+        var created = Assert.IsType<Mvc.CreatedResult>(result);
         Assert.Equal(201, created.StatusCode);
         Assert.Equal(5, created.Value);
-        Assert.Null(created.ActionName);
+
+        var httpContext = FormatResponse(created);
+
+        Assert.Equal(201, httpContext.Response.StatusCode);
+        Assert.False(httpContext.Response.Headers.ContainsKey("Location"));
     }
 
     [Fact]
@@ -104,5 +110,28 @@ public class ToActionResultTests
             .ToActionResult(new ResourceLocationInfo("GetById", "Items", new { id = 1 }));
 
         Assert.Equal("GetById", Assert.IsType<Mvc.CreatedAtActionResult>(result).ActionName);
+    }
+
+    [Fact]
+    public void Untyped_Created_MapsTo_201_WithoutLocation()
+    {
+        var result = new CreatedResult().ToActionResult();
+
+        var created = Assert.IsType<Mvc.CreatedResult>(result);
+        Assert.Equal(201, created.StatusCode);
+        Assert.Null(created.Value);
+
+        var httpContext = FormatResponse(created);
+
+        Assert.Equal(201, httpContext.Response.StatusCode);
+        Assert.False(httpContext.Response.Headers.ContainsKey("Location"));
+    }
+
+    private static DefaultHttpContext FormatResponse(Mvc.ObjectResult result)
+    {
+        var httpContext = new DefaultHttpContext();
+        result.OnFormatting(new Mvc.ActionContext(httpContext, new RouteData(), new ActionDescriptor()));
+
+        return httpContext;
     }
 }
